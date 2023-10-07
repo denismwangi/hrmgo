@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class DucumentUpload extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'name',
         'role',
@@ -13,5 +16,5 @@ class DucumentUpload extends Model
         'description',
         'created_by',
     ];
-    
+
 }

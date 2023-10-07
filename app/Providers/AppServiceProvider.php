@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+use Ramsey\Uuid\Uuid;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,5 +28,25 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+
+        Permission::retrieved(function (Permission $permission) {
+            $permission->incrementing = false;
+        });
+
+        Permission::creating(function (Permission $permission) {
+            $permission->incrementing = false;
+            $permission->id = Uuid::uuid4()->toString();
+        });
+
+        Role::retrieved(function (Role $role) {
+            $role->incrementing = false;
+        });
+
+        Role::creating(function (Role $role) {
+            $role->incrementing = false;
+            $role->id = Uuid::uuid4()->toString();
+        });
+
+
     }
 }

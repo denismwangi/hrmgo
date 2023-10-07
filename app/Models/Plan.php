@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 class Plan extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'name',
         'price',
@@ -37,7 +40,7 @@ class Plan extends Model
     {
         return Plan::count();
     }
-        
+
     public static function most_purchese_plan()
     {
         $free_plan = Plan::where('price', '<=', 0)->first()->id;

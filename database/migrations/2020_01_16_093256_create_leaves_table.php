@@ -14,9 +14,9 @@ class CreateLeavesTable extends Migration
     public function up()
     {
         Schema::create('leaves', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('employee_id');
-            $table->integer('leave_type_id');
+            $table->uuid('id')->primary();
+            $table->string('employee_id');
+            $table->string('leave_type_id');
             $table->date('applied_on');
             $table->date('start_date');
             $table->date('end_date');
@@ -24,7 +24,7 @@ class CreateLeavesTable extends Migration
             $table->string('leave_reason');
             $table->string('remark')->nullable();
             $table->string('status');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

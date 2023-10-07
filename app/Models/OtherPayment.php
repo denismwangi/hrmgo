@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class OtherPayment extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'employee_id',
         'title',

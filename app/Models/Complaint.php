@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class Complaint extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'complaint_from',
         'complaint_against',

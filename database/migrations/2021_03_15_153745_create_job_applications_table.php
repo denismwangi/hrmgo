@@ -15,8 +15,8 @@ class CreateJobApplicationsTable extends Migration
     {
         Schema::create(
             'job_applications', function (Blueprint $table){
-            $table->id();
-            $table->integer('job');
+            $table->uuid('id')->primary();
+            $table->string('job');
             $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
@@ -30,13 +30,13 @@ class CreateJobApplicationsTable extends Migration
             $table->string('state')->nullable();
             $table->string('city')->nullable();
             $table->string('zip_code')->nullable();
-            $table->integer('stage')->default(1);
-            $table->integer('order')->default(0);
+            $table->string('stage')->default(1);
+            $table->string('order')->default(0);
             $table->text('skill')->nullable();
             $table->integer('rating')->default(0);
             $table->integer('is_archive')->default(0);
             $table->text('custom_question')->nullable();
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         }
         );

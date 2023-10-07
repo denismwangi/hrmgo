@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class Warning extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'warning_to',
         'warning_by',

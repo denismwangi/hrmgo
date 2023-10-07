@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class TransferBalance extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'from_account_id',
         'to_account_id',

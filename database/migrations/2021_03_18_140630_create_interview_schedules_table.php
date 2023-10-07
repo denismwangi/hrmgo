@@ -15,14 +15,14 @@ class CreateInterviewSchedulesTable extends Migration
     {
         Schema::create(
             'interview_schedules', function (Blueprint $table){
-            $table->id();
-            $table->integer('candidate');
-            $table->integer('employee')->default(0);
+            $table->uuid('id')->primary();
+            $table->string('candidate');
+            $table->string('employee')->default(0);
             $table->date('date');
             $table->time('time');
             $table->text('comment')->nullable();
             $table->string('employee_response')->nullable();
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         }
         );

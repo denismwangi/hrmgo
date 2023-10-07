@@ -15,10 +15,10 @@ class CreateCustomQuestionsTable extends Migration
     {
         Schema::create(
             'custom_questions', function (Blueprint $table){
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('question');
             $table->string('is_required')->nullable();
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         }
         );

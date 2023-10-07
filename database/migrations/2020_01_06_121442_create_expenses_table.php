@@ -15,16 +15,16 @@ class CreateExpensesTable extends Migration
     {
         Schema::create(
             'expenses', function (Blueprint $table){
-            $table->bigIncrements('id');
-            $table->integer('account_id');
+            $table->uuid('id')->primary();
+            $table->string('account_id');
             $table->integer('amount');
             $table->date('date');
-            $table->integer('expense_category_id');
-            $table->integer('payee_id');
+            $table->string('expense_category_id');
+            $table->string('payee_id');
             $table->integer('payment_type_id');
             $table->string('referal_id')->nullable();
             $table->text('description')->nullable();
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         }
         );

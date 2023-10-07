@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'order_id',
         'name',

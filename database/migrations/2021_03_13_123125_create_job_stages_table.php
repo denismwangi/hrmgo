@@ -15,10 +15,10 @@ class CreateJobStagesTable extends Migration
     {
         Schema::create(
             'job_stages', function (Blueprint $table){
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('title');
-            $table->integer('order')->default(0);
-            $table->integer('created_by');
+            $table->string('order')->default(0);
+            $table->string('created_by');
             $table->timestamps();
         }
         );

@@ -14,7 +14,7 @@ class CreateGenratePayslipOptionsTable extends Migration
     public function up()
     {
         Schema::create('genrate_payslip_options', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
             $table->timestamps();
         });
     }

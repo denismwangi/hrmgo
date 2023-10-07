@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Permission;
@@ -15,6 +16,8 @@ use Spatie\GoogleCalendar\Event as GoogleEvent;
 
 class Utility extends Model
 {
+    use Uuid;
+
     public static function settings()
     {
         $data = DB::table('settings');

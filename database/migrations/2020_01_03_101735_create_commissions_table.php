@@ -14,11 +14,11 @@ class CreateCommissionsTable extends Migration
     public function up()
     {
         Schema::create('commissions', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('employee_id');
+            $table->uuid('id')->primary();
+            $table->string('employee_id');
             $table->string('title');
             $table->float('amount');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

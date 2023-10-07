@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class Asset extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'name',
         'employee_id',
@@ -15,10 +18,10 @@ class Asset extends Model
         'description',
         'created_by',
     ];
-    
+
     public function users($users)
     {
-    
+
         $userArr = explode(',', $users);
         $emp = Employee::whereIn('id', $userArr);
         $employees = $emp->get()->pluck('id');
@@ -28,7 +31,7 @@ class Asset extends Model
             $emp=Employee::find($user);
             $users[] = User::where('id',$emp->user_id)->first();
         }
-    
+
         return $users;
     }
 }

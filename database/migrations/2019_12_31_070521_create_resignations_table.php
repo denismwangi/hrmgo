@@ -14,12 +14,12 @@ class CreateResignationsTable extends Migration
     public function up()
     {
         Schema::create('resignations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('employee_id');
+            $table->uuid('id')->primary();
+            $table->string('employee_id');
             $table->date('notice_date');
             $table->date('resignation_date');
             $table->string('description');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

@@ -18,9 +18,9 @@ class CreatePlanRequestsTable extends Migration
         });
 
         Schema::create('plan_requests', function (Blueprint $table){
-            $table->id();
-            $table->integer('user_id');
-            $table->integer('plan_id');
+            $table->uuid('id')->primary();
+            $table->string('user_id');
+            $table->string('plan_id');
             $table->string('duration', 20)->default('monthly');
             $table->timestamps();
         });

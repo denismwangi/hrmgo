@@ -14,9 +14,9 @@ class CreateWarningsTable extends Migration
     public function up()
     {
         Schema::create('warnings', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('warning_to');
-            $table->integer('warning_by');
+            $table->uuid('id')->primary();
+            $table->string('warning_to');
+            $table->string('warning_by');
             $table->string('subject');
             $table->date('warning_date');
             $table->string('description');

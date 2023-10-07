@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class Travel extends Model
 {
+    use Uuid;
+
     protected $table = 'travels';
 
     protected $fillable = [

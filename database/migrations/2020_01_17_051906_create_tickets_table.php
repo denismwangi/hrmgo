@@ -14,14 +14,14 @@ class CreateTicketsTable extends Migration
     public function up()
     {
         Schema::create('tickets', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
             $table->string('title');
-            $table->integer('employee_id');
+            $table->string('employee_id');
             $table->string('priority');
             $table->date('end_date');
             $table->text('description')->nullable();
             $table->string('ticket_code');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->string('status');
             $table->timestamps();
         });

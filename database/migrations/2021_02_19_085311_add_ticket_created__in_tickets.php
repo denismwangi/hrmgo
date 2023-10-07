@@ -15,7 +15,7 @@ class AddTicketCreatedInTickets extends Migration
     {
         Schema::table(
             'tickets', function (Blueprint $table){
-            $table->integer('ticket_created')->default(0)->after('ticket_code');
+            $table->string('ticket_created')->default(0)->after('ticket_code');
         }
         );
     }

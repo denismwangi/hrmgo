@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('webhooks', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->text('module');
             $table->text('url');
             $table->text('method');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

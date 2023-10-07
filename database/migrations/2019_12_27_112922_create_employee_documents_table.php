@@ -14,11 +14,11 @@ class CreateEmployeeDocumentsTable extends Migration
     public function up()
     {
         Schema::create('employee_documents', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('employee_id');
-            $table->integer('document_id');
+            $table->uuid('id')->primary();
+            $table->string('employee_id');
+            $table->string('document_id');
             $table->string('document_value');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

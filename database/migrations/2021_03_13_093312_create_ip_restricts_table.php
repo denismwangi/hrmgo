@@ -15,9 +15,9 @@ class CreateIpRestrictsTable extends Migration
     {
         Schema::create(
             'ip_restricts', function (Blueprint $table){
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('ip');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         }
         );

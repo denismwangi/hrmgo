@@ -15,8 +15,8 @@ class CreateContractCommentsTable extends Migration
     {
         Schema::create('contract_comments', function (Blueprint $table) {
 
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('contract_id');
+            $table->uuid('id')->primary();
+            $table->string('contract_id');
             $table->string('user_id');
             $table->string('comment');
             $table->timestamps();

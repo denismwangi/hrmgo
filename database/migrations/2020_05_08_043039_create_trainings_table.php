@@ -15,20 +15,20 @@ class CreateTrainingsTable extends Migration
     {
         Schema::create(
             'trainings', function (Blueprint $table){
-            $table->bigIncrements('id');
-            $table->integer('branch');
-            $table->integer('trainer_option');
-            $table->integer('training_type');
-            $table->integer('trainer');
+            $table->uuid('id')->primary();
+            $table->string('branch');
+            $table->string('trainer_option');
+            $table->string('training_type');
+            $table->string('trainer');
             $table->float('training_cost')->default(0.00);
-            $table->integer('employee');
+            $table->string('employee');
             $table->date('start_date');
             $table->date('end_date');
             $table->text('description')->nullable();
             $table->integer('performance')->default(0);
             $table->integer('status')->default(0);
             $table->text('remarks')->nullable();
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         }
         );

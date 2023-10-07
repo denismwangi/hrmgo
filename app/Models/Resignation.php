@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class Resignation extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'employee_id',
         'notice_date',

@@ -15,18 +15,18 @@ class CreateIndicatorsTable extends Migration
     {
         Schema::create(
             'indicators', function (Blueprint $table){
-            $table->bigIncrements('id');
-            $table->integer('branch')->default(0);
-            $table->integer('department')->default(0);
-            $table->integer('designation')->default(0);
-            $table->integer('customer_experience')->default(0);
-            $table->integer('marketing')->default(0);
-            $table->integer('administration')->default(0);
-            $table->integer('professionalism')->default(0);
-            $table->integer('integrity')->default(0);
-            $table->integer('attendance')->default(0);
-            $table->integer('created_user')->default(0);
-            $table->integer('created_by')->default(0);
+            $table->uuid('id')->primary();
+            $table->string('branch')->default(0);
+            $table->string('department')->default(0);
+            $table->string('designation')->default(0);
+            $table->string('customer_experience')->default(0);
+            $table->string('marketing')->default(0);
+            $table->string('administration')->default(0);
+            $table->string('professionalism')->default(0);
+            $table->string('integrity')->default(0);
+            $table->string('attendance')->default(0);
+            $table->string('created_user')->default(0);
+            $table->string('created_by')->default(0);
             $table->timestamps();
         }
         );

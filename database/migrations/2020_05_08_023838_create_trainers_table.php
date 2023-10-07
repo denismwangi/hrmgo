@@ -15,7 +15,7 @@ class CreateTrainersTable extends Migration
     {
         Schema::create(
             'trainers', function (Blueprint $table){
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
             $table->string('branch');
             $table->string('firstname');
             $table->string('lastname');
@@ -23,7 +23,7 @@ class CreateTrainersTable extends Migration
             $table->string('email');
             $table->text('address')->nullable();
             $table->text('expertise')->nullable();
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         }
         );

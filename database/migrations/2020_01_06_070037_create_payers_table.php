@@ -14,10 +14,10 @@ class CreatePayersTable extends Migration
     public function up()
     {
         Schema::create('payers', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
             $table->string('payer_name');
             $table->string('contact_number');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class UserCoupon extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'user',
         'coupon',

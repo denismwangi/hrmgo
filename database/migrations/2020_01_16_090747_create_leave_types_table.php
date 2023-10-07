@@ -14,10 +14,10 @@ class CreateLeaveTypesTable extends Migration
     public function up()
     {
         Schema::create('leave_types', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
             $table->string('title');
             $table->integer('days');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

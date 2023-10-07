@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class JobOnBoard extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'application',
         'joining_date',
@@ -37,13 +40,13 @@ class JobOnBoard extends Model
         '' => 'Select Job Type',
         'full time' => 'Full Time',
         'part time' => 'Part Time',
-        
+
     ];
     public static $salary_duration = [
         '' => 'Select Salary Duration',
         'monthly' => 'Monthly',
         'weekly' => 'Weekly',
-        
+
     ];
-   
+
 }

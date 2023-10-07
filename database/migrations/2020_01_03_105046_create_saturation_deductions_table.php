@@ -14,12 +14,12 @@ class CreateSaturationDeductionsTable extends Migration
     public function up()
     {
         Schema::create('saturation_deductions', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('employee_id');
-            $table->integer('deduction_option');
+            $table->uuid('id')->primary();
+            $table->string('employee_id');
+            $table->string('deduction_option');
             $table->string('title');
             $table->float('amount');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

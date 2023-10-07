@@ -14,13 +14,13 @@ class CreateAwardsTable extends Migration
     public function up()
     {
         Schema::create('awards', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('employee_id');
+            $table->uuid('id')->primary();
+            $table->string('employee_id');
             $table->string('award_type');
             $table->date('date');
             $table->string('gift');
             $table->string('description');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

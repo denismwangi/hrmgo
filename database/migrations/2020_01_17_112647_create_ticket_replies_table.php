@@ -15,11 +15,11 @@ class CreateTicketRepliesTable extends Migration
     {
         Schema::create(
             'ticket_replies', function (Blueprint $table){
-            $table->bigIncrements('id');
-            $table->integer('ticket_id');
-            $table->integer('employee_id');
+            $table->uuid('id')->primary();
+            $table->string('ticket_id');
+            $table->string('employee_id');
             $table->string('description');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->integer('is_read')->default('0');
             $table->timestamps();
         }

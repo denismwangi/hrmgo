@@ -15,9 +15,9 @@ class CreateGoalTrackingsTable extends Migration
     {
         Schema::create(
             'goal_trackings', function (Blueprint $table){
-            $table->bigIncrements('id');
-            $table->integer('branch');
-            $table->integer('goal_type');
+            $table->uuid('id')->primary();
+            $table->string('branch');
+            $table->string('goal_type');
             $table->date('start_date');
             $table->date('end_date');
             $table->string('subject')->nullable();
@@ -25,7 +25,7 @@ class CreateGoalTrackingsTable extends Migration
             $table->text('description')->nullable();
             $table->integer('status')->default(0);
             $table->integer('progress')->default(0);
-            $table->integer('created_by')->default(0);
+            $table->string('created_by')->default(0);
             $table->timestamps();
         }
         );

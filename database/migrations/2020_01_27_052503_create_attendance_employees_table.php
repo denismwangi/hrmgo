@@ -14,8 +14,8 @@ class CreateAttendanceEmployeesTable extends Migration
     public function up()
     {
         Schema::create('attendance_employees', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('employee_id');
+            $table->uuid('id')->primary();
+            $table->string('employee_id');
             $table->date('date');
             $table->string('status');
             $table->time('clock_in');
@@ -24,7 +24,7 @@ class CreateAttendanceEmployeesTable extends Migration
             $table->time('early_leaving');
             $table->time('overtime');
             $table->time('total_rest');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

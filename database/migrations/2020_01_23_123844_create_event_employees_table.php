@@ -14,10 +14,10 @@ class CreateEventEmployeesTable extends Migration
     public function up()
     {
         Schema::create('event_employees', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('event_id');
-            $table->integer('employee_id');
-            $table->integer('created_by');
+            $table->uuid('id')->primary();
+            $table->string('event_id');
+            $table->string('employee_id');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

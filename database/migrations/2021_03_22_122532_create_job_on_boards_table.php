@@ -15,8 +15,8 @@ class CreateJobOnBoardsTable extends Migration
     {
         Schema::create(
             'job_on_boards', function (Blueprint $table){
-            $table->id();
-            $table->integer('application');
+            $table->uuid('id')->primary();
+            $table->string('application');
             $table->date('joining_date')->nullable();
             $table->string('status')->nullable();
             $table->string('job_type')->nullable();
@@ -25,7 +25,7 @@ class CreateJobOnBoardsTable extends Migration
             $table->string('salary_type')->nullable();
             $table->string('salary_duration')->nullable();
             $table->integer('convert_to_employee')->default(0);
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         }
         );

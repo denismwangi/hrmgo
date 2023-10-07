@@ -14,9 +14,9 @@ class CreateZoomMeetingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('zoom_meetings', function (Blueprint $table) 
+        Schema::create('zoom_meetings', function (Blueprint $table)
         {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('title')->nullable();
             $table->string('meeting_id')->default(0);
             $table->string('user_id')->default(0);
@@ -26,7 +26,7 @@ class CreateZoomMeetingsTable extends Migration
             $table->text('start_url')->nullable();
             $table->string('join_url')->nullable();
             $table->string('status')->default('waiting')->nullable();
-            $table->integer('created_by')->default(0);
+            $table->string('created_by')->default(0);
             $table->timestamps();
         });
     }

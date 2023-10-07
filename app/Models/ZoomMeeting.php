@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class ZoomMeeting extends Model
 {
+    use Uuid;
+
 
     protected $fillable = [
         'title',

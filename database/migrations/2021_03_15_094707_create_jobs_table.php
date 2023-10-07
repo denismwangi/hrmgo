@@ -15,14 +15,14 @@ class CreateJobsTable extends Migration
     {
         Schema::create(
             'jobs', function (Blueprint $table){
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('title');
             $table->text('description')->nullable();
             $table->text('requirement')->nullable();
-            $table->integer('branch')->default(0);
-            $table->integer('category')->default(0);
+            $table->string('branch')->default(0);
+            $table->string('category')->default(0);
             $table->text('skill')->nullable();
-            $table->integer('position')->nullable();
+            $table->string('position')->nullable();
             $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->string('status')->nullable();
@@ -30,7 +30,7 @@ class CreateJobsTable extends Migration
             $table->string('visibility')->nullable();
             $table->string('code')->nullable();
             $table->string('custom_question')->nullable();
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         }
         );

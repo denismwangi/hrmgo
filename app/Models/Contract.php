@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class Contract extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'name',
         'employee_name',
@@ -27,7 +30,7 @@ class Contract extends Model
     {
         return $this->hasOne('App\Models\ContractType', 'id', 'type');
     }
-   
+
 
     public function files()
     {
@@ -47,7 +50,7 @@ class Contract extends Model
     {
         return $this->hasMany('App\Models\ContractNote', 'contract_id', 'id');
     }
-   
+
     public function ContractAttechment()
     {
         return $this->belongsTo('App\Models\ContractAttechment', 'id', 'contract_id');
@@ -79,7 +82,7 @@ class Contract extends Model
         $status = [
             'accept' => 'Accept',
             'decline' => 'Decline',
-           
+
         ];
         return $status;
     }

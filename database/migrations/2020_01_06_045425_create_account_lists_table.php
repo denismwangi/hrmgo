@@ -14,9 +14,9 @@ class CreateAccountListsTable extends Migration
     public function up()
     {
         Schema::create('account_lists', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
             $table->string('account_name');
-            $table->integer('initial_balance');
+            $table->string('initial_balance');
             $table->string('account_number');
             $table->string('branch_code');
             $table->string('bank_branch');

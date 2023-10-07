@@ -14,12 +14,12 @@ class CreateAllowancesTable extends Migration
     public function up()
     {
         Schema::create('allowances', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('employee_id');
-            $table->integer('allowance_option');
+            $table->uuid('id')->primary();
+            $table->string('employee_id');
+            $table->string('allowance_option');
             $table->string('title');
             $table->float('amount');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

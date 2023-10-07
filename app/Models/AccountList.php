@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class AccountList extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'company_id',
         'account_name',

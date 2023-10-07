@@ -12,9 +12,12 @@ use Spatie\Permission\Guard;
 use Spatie\Permission\PermissionRegistrar;
 use Spatie\Permission\Traits\HasRoles;
 use Spatie\Permission\Traits\RefreshesPermissionCache;
+use Spatie\Permission\Traits\Uuid;
 
 class Permission extends Model implements PermissionContract
 {
+    use Uuid;
+
     use HasRoles;
     use RefreshesPermissionCache;
 

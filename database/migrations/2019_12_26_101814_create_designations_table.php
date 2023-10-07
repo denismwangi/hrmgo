@@ -14,10 +14,10 @@ class CreateDesignationsTable extends Migration
     public function up()
     {
         Schema::create('designations', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('department_id');
+            $table->uuid('id')->primary();
+            $table->string('department_id');
             $table->string('name');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

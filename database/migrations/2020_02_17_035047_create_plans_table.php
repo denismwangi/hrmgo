@@ -15,7 +15,7 @@ class CreatePlansTable extends Migration
     {
         Schema::create(
             'plans', function (Blueprint $table){
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
             $table->string('name', 100)->unique();
             $table->float('price')->default(0);
             $table->string('duration', 100);

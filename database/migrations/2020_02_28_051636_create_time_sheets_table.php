@@ -15,12 +15,12 @@ class CreateTimeSheetsTable extends Migration
     {
         Schema::create(
             'time_sheets', function (Blueprint $table){
-            $table->bigIncrements('id');
-            $table->integer('employee_id')->default(0);
+            $table->uuid('id')->primary();
+            $table->string('employee_id')->default(0);
             $table->date('date');
             $table->float('hours')->default(0.0);
             $table->text('remark')->nullable();
-            $table->integer('created_by')->default('0');
+            $table->string('created_by')->default('0');
             $table->timestamps();
         }
         );

@@ -15,15 +15,15 @@ class CreateTransferBalancesTable extends Migration
     {
         Schema::create(
             'transfer_balances', function (Blueprint $table){
-            $table->bigIncrements('id');
-            $table->integer('from_account_id');
-            $table->integer('to_account_id');
+            $table->uuid('id')->primary();
+            $table->string('from_account_id');
+            $table->string('to_account_id');
             $table->date('date');
             $table->integer('amount');
-            $table->integer('payment_type_id');
+            $table->string('payment_type_id');
             $table->string('referal_id')->nullable();
             $table->text('description')->nullable();
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         }
         );

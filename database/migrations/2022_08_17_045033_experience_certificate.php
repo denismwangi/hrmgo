@@ -14,10 +14,10 @@ class ExperienceCertificate extends Migration
     public function up()
     {
         Schema::create('experience_certificates', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('lang', 255);
             $table->longtext('content');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

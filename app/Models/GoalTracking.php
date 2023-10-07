@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class GoalTracking extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'branch',
         'goal_type',

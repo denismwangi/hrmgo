@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 use SebastianBergmann\CodeCoverage\Percentage;
 
 class Employee extends Model
 {
+    use Uuid;
+
     protected $table = 'employees';
     protected $fillable = [
         'user_id',
@@ -43,7 +46,7 @@ class Employee extends Model
     {
         return $this->hasOne('App\Models\PayslipType', 'id', 'salary_type')->pluck('name')->first();
     }
- 
+
     public function get_net_salary()
     {
         $allowances      = Allowance::where('employee_id', '=', $this->id)->get();
@@ -82,7 +85,7 @@ class Employee extends Model
             } else {
                 $total_loan = $loan->amount + $total_loan;
             }
-           
+
         }
 
         //Saturation Deduction

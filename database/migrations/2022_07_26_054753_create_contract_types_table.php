@@ -15,9 +15,9 @@ class CreateContractTypesTable extends Migration
     {
         Schema::create(
             'contract_types', function (Blueprint $table){
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
             $table->string('name');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         }
         );

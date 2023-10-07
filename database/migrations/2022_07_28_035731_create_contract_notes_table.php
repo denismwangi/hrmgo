@@ -14,9 +14,9 @@ class CreateContractNotesTable extends Migration
     public function up()
     {
         Schema::create('contract_notes', function (Blueprint $table) {
-            $table->id();
-            $table->integer('contract_id');
-            $table->integer('user_id');
+            $table->uuid('id')->primary();
+            $table->string('contract_id');
+            $table->string('user_id');
             $table->string('note');
             $table->timestamps();
         });

@@ -15,12 +15,12 @@ class CreateCompanyPoliciesTable extends Migration
     {
         Schema::create(
             'company_policies', function (Blueprint $table){
-            $table->bigIncrements('id');
-            $table->integer('branch');
+            $table->uuid('id')->primary();
+            $table->string('branch');
             $table->string('title');
             $table->text('description');
             $table->string('attachment')->nullable();
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         }
         );

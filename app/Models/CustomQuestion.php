@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class CustomQuestion extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'question',
         'is_required',

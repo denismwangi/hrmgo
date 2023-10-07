@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class PaySlip extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'employee_id',
         'net_payble',
@@ -21,7 +24,7 @@ class PaySlip extends Model
         'created_by',
     ];
 
-    
+
     public static function employee($id)
     {
         return Employee::find($id);

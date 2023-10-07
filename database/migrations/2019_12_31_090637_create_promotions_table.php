@@ -14,9 +14,9 @@ class CreatePromotionsTable extends Migration
     public function up()
     {
         Schema::create('promotions', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('employee_id');
-            $table->integer('designation_id');
+            $table->uuid('id')->primary();
+            $table->string('employee_id');
+            $table->string('designation_id');
             $table->string('promotion_title');
             $table->date('promotion_date');
             $table->string('description');

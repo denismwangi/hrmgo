@@ -14,9 +14,9 @@ class CreateContractAttechmentsTable extends Migration
     public function up()
     {
         Schema::create('contract_attechments', function (Blueprint $table) {
-            
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('contract_id');
+
+            $table->uuid('id')->primary();
+            $table->string('contract_id');
             $table->string('user_id');
             $table->string('files');
             $table->timestamps();

@@ -14,7 +14,7 @@ class CreateSetSalariesTable extends Migration
     public function up()
     {
         Schema::create('set_salaries', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
             $table->timestamps();
         });
     }

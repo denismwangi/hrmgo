@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 
 class Leave extends Model
 {
+    use Uuid;
+
     protected $fillable = [
         'employee_id',
         'Leave_type_id',

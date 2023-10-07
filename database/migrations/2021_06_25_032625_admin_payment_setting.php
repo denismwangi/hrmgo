@@ -14,10 +14,10 @@ class AdminPaymentSetting extends Migration
     public function up()
     {
         Schema::create('admin_payment_settings', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
             $table->string('name');
             $table->string('value');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
             $table->unique(['name', 'created_by']);
         });

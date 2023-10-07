@@ -15,9 +15,9 @@ class CreateContractsTable extends Migration
     {
         Schema::create(
             'contracts', function (Blueprint $table){
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
             $table->string('subject')->nullable();
-            $table->integer('employee_name');
+            $table->string('employee_name');
             $table->string('value')->nullable();
             $table->integer('type');
             $table->date('start_date');
@@ -28,7 +28,7 @@ class CreateContractsTable extends Migration
             $table->longText('contract_description')->nullable();
             $table->longText('employee_signature')->nullable();
             $table->longText('company_signature')->nullable();
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         }
         );

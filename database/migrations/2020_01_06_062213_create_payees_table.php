@@ -14,10 +14,10 @@ class CreatePayeesTable extends Migration
     public function up()
     {
         Schema::create('payees', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->uuid('id')->primary();
             $table->string('payee_name');
             $table->string('contact_number');
-            $table->integer('created_by');
+            $table->string('created_by');
             $table->timestamps();
         });
     }
